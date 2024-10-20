@@ -17,13 +17,14 @@ const TodoForm = () => {
     e.preventDefault();
     if (todo.text === "") return;
     dispatch(addTodo(todo.text));
+    setTodo({ text: "" });
   };
   return (
     <div>
       <form className="w-full mt-4" onSubmit={handleSubmit}>
         <div className="flex items-center border-b border-teal-500 py-2">
           <input
-            className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+            className="appearance-none bg-transparent border-none w-full text-white text-base mr-3 py-4 px-2 leading-tight focus:outline-none"
             name="text"
             type="text"
             placeholder="Input your task!"
@@ -32,7 +33,7 @@ const TodoForm = () => {
             onChange={handleChange}
           />
           <button
-            className="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
+            className="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded font-bold"
             type="submit"
           >
             Add task
